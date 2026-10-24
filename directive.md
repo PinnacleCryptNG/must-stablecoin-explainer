@@ -5,11 +5,16 @@
 **Completion criteria:** `python3 build.py` passes metadata and alt-text checks; every claim maps to a ledger entry; git log shows all 5 stages; the correction is visible in the article and the changelog.
 
 ## Appendix
-- Live preview: [PLACEHOLDER URL: Vercel/GitHub Pages, not yet deployed]
-- Repo: [PLACEHOLDER URL: not yet created]
+- Live site (GitHub Pages): https://pinnaclecryptng.github.io/must-stablecoin-explainer/
+- Article: https://pinnaclecryptng.github.io/must-stablecoin-explainer/stablecoin-payment-exceptions/
+- Changelog: https://pinnaclecryptng.github.io/must-stablecoin-explainer/changelog.html
+- Repo: https://github.com/PinnacleCryptNG/must-stablecoin-explainer
+- Files: [article source](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/blob/main/content/stablecoin-payment-exceptions.md) · [ledger](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/blob/main/ledger.md) · [AI step](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/blob/main/ai-step/README.md) · [CHANGELOG](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/blob/main/CHANGELOG.md) · [Pages workflow](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/blob/main/.github/workflows/pages.yml)
+- Commits: [draft v0.1](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/commit/49715e9007a850915a6eb72639b0806e9d1d61d3) · [review fixes](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/commit/121d4d7cb95993ec9431487010d8449387318797) · [publish v1.0](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/commit/58d5191202a6df9a864f04634380cadc80c5c9a9) · [v1.1 correction](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/commit/b44a49eb8bf80632cd18d39deb0d70b4251b2a8a)
+- Diffs: [draft→review](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/compare/49715e9...121d4d7) · [v1.0→v1.1](https://github.com/PinnacleCryptNG/must-stablecoin-explainer/compare/58d5191...b44a49e)
 - Loom: [PLACEHOLDER URL: to be recorded]
 
-**Viewing steps:** `git log --oneline` → `python3 build.py --preview` (or without the flag for published only) → `python3 -m http.server -d site 8000` → open http://localhost:8000/. Use `git diff <draft> <review>` to see the fact-check revisions and `git diff <v1.0> <v1.1>` to see the correction.
+**Viewing steps:** open the live site above, or locally: `git log --oneline` → `python3 build.py --preview` (or without the flag for published only) → `python3 -m http.server -d site 8000` → open http://localhost:8000/. Use `git diff <draft> <review>` to see the fact-check revisions and `git diff <v1.0> <v1.1>` to see the correction.
 
 **Checks run (2026-10-24):** build OK (metadata, alt text, draft gating); body prose 983 words; all 3 sources fetched and quoted; `python3 check_triggers.py` → both baselines OK.
 
