@@ -2,8 +2,8 @@
 title: "When a Stablecoin Payment Goes Wrong: What Actually Happens"
 slug: stablecoin-payment-exceptions
 description: "A plain-English guide for merchants and freelancers to wrong-network sends, stuck transactions, freezes, refunds and finality when paid in USDC or USDT."
-status: draft
-version: 0.1
+status: review
+version: 0.2
 author: AbdulMalik Yusuf (Pinnacle)
 ai_assisted: true
 last_verified: 2026-10-24
@@ -39,7 +39,7 @@ On Ethereum, a transaction goes through stages. It is broadcast to a pool of pen
 
 Every Ethereum transaction carries a `nonce`, "a sequentially incrementing counter which indicates the transaction number from the account", plus fee limits (`maxFeePerGas`, `maxPriorityFeePerGas`) ([ethereum.org](https://ethereum.org/en/developers/docs/transactions/)). A transaction with a fee cap below what validators currently require can sit in the pending pool, and because nonces run in order, later transactions from the same account queue behind it.
 
-What you can do depends on your wallet. ethereum.org says you can replace a stuck transaction by re-sending the same nonce with a higher fee.
+What you can do depends on your wallet. Many wallets offer "speed up" or "cancel", which re-sends the same nonce with a higher fee. This is wallet behaviour, not a guarantee, so test it on a small amount first.
 
 A *failed* transaction is different: it was included but reverted, and the gas is still spent. The tokens don't move.
 
@@ -51,7 +51,7 @@ Recovery, if any, depends on whoever controls the receiving address, such as an 
 
 ## 5. Freezes and blocklists (Implemented)
 
-Both issuers can freeze tokens. Circle reserves the right to "block the transfer of USDC to and from an address on chain" under its blocklisting policy, and may freeze USDC if it receives "a legal order from a valid government authority." If you *receive* USDC from a blocked address, Circle "may freeze such USDC." Tether only freezes tokens when ordered by law enforcement.
+Both issuers can freeze tokens. Circle reserves the right to "block the transfer of USDC to and from an address on chain" under its blocklisting policy, and may freeze USDC if it receives "a legal order from a valid government authority." If you *receive* USDC from a blocked address, Circle "may freeze such USDC." Tether may freeze tokens and blacklist addresses for a Prohibited Use, "in its sole and absolute discretion", or when directed by a government.
 
 **Opinion:** this is the main way a stablecoin differs from ETH in a payment flow. Clean counterparties matter, because tainted funds can become unusable in your wallet.
 
@@ -69,7 +69,7 @@ Both issuers can freeze tokens. Circle reserves the right to "block the transfer
 
 ## Operational limits
 
-- Anyone can always redeem 1 USDC for $1.
+- Redemption for dollars is not universal. Circle redeems only for Circle Mint account holders, and Tether only for verified customers.
 - Neither issuer promises a $1 price on third-party platforms. Circle: it "does not guarantee that the value of one (1) USDC will always equal 1 USD ($1) on other platforms."
 - After a chain fork, issuers may pause services and choose which fork they support.
 - The issuers' terms change. Circle's Terms were last updated Oct 15, 2026 and Tether's on Feb 26, 2026, the versions current when this piece was verified.
