@@ -3,7 +3,7 @@ title: "When a Stablecoin Payment Goes Wrong: What Actually Happens"
 slug: stablecoin-payment-exceptions
 description: "A plain-English guide for merchants and freelancers to wrong-network sends, stuck transactions, freezes, refunds and finality when paid in USDC or USDT."
 status: published
-version: 1.0
+version: 1.1
 author: AbdulMalik Yusuf (Pinnacle)
 ai_assisted: true
 last_verified: 2026-10-24
@@ -41,7 +41,7 @@ Every Ethereum transaction carries a `nonce`, "a sequentially incrementing count
 
 What you can do depends on your wallet. Many wallets offer "speed up" or "cancel", which re-sends the same nonce with a higher fee. This is wallet behaviour, not a guarantee, so test it on a small amount first.
 
-A *failed* transaction is different: it was included but reverted. Since "any gas not used in a transaction is refunded", a failure costs you little. The tokens don't move.
+A *failed* transaction is different: it was included but reverted, and the gas is still spent. The tokens don't move.
 
 ## 4. Wrong network or wrong token (Implemented)
 
@@ -61,7 +61,7 @@ Both issuers can freeze tokens. Circle reserves the right to "block the transfer
 |---|---|---|---|
 | Client paid on the wrong network | Tokens are on a chain your account doesn't watch | Only by whoever controls the receiving address | Give exchange support the tx hash; for self-custody, check the same address on that chain |
 | "Pending" for an hour | Fee too low, or an earlier nonce is stuck | Yes, before inclusion | Speed up or replace in the wallet (same nonce) |
-| "Failed" on the explorer | Included but reverted; unused gas refunded | Nothing to undo; tokens didn't move | Fix the cause and resend |
+| "Failed" on the explorer | Included but reverted; gas spent | Nothing to undo; tokens didn't move | Fix the cause and resend |
 | Customer wants a refund | Original payment is final | No reversal | Send a new payment; record both hashes |
 | Funds frozen | Issuer blocklist or legal order | Only by the issuer | Contact the issuer; keep records |
 
@@ -81,3 +81,6 @@ Both issuers can freeze tokens. Circle reserves the right to "block the transfer
 3. Screen new counterparties before you accept large payments.
 
 *Disclosure: I used an AI assistant to draft and check parts of this piece. Every claim was verified against the linked primary sources. See the editorial log.*
+
+> **Correction (v1.1, 2026-10-24):** An earlier version said a failed transaction "costs you little" because unused gas is refunded. That was misleading: a reverted transaction still consumes the gas used up to the point of failure, and ethereum.org's refund note refers only to *unused* gas. The text and table now say the gas is spent.
+> **Update policy:** this article is re-verified whenever Circle's or Tether's terms change their "Last updated" date. See the changelog.
