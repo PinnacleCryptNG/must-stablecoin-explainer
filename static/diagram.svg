@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="150" font-family="system-ui" font-size="13">
+<rect width="720" height="150" fill="#fff"/>
+<g fill="#eef3ff" stroke="#335">
+<rect x="10" y="40" width="120" height="50" rx="6"/><rect x="155" y="40" width="120" height="50" rx="6"/><rect x="300" y="40" width="120" height="50" rx="6"/><rect x="445" y="40" width="120" height="50" rx="6"/><rect x="590" y="40" width="120" height="50" rx="6"/></g>
+<g text-anchor="middle"><text x="70" y="70">Signed + sent</text><text x="215" y="70">Pending pool</text><text x="360" y="70">In a block</text><text x="505" y="70">Justified</text><text x="650" y="70">Finalized</text>
+<text x="215" y="115" fill="#a30">stuck: low fee / nonce gap</text><text x="215" y="130" fill="#a30">fix: replace same nonce</text>
+<text x="360" y="115" fill="#a30">can still revert ("failed")</text><text x="650" y="115" fill="#060">refund = new payment</text>
+<text x="360" y="25" fill="#333">Issuer freeze/blocklist can affect tokens at any stage after receipt</text></g>
+<g stroke="#335" marker-end="url(#a)"><line x1="130" y1="65" x2="155" y2="65"/><line x1="275" y1="65" x2="300" y2="65"/><line x1="420" y1="65" x2="445" y2="65"/><line x1="565" y1="65" x2="590" y2="65"/></g>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="#335"/></marker></defs></svg>

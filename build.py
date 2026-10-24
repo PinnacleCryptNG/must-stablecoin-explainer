@@ -6,7 +6,7 @@ import re, sys, html, pathlib, json
 ROOT = pathlib.Path(__file__).parent
 PREVIEW = "--preview" in sys.argv
 # --base=/repo-name  (or BASE_PATH env) prefixes root-relative links for sub-path hosting
-import os
+import os, pathlib
 BASE = next((a.split("=",1)[1] for a in sys.argv if a.startswith("--base=")), os.environ.get("BASE_PATH", "")).rstrip("/")
 REQUIRED = ["title", "slug", "description", "status", "version", "last_verified"]
 
@@ -86,6 +86,8 @@ def main():
     (site / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Explainers</title><style>{CSS}</style></head><body><h1>Explainers</h1><ul>{links}</ul></body></html>')
     cl = (ROOT / "CHANGELOG.md").read_text() if (ROOT / "CHANGELOG.md").exists() else ""
     (site / "changelog.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Changelog</title><style>{CSS}</style></head><body>{render(cl)}</body></html>')
+    import shutil
+    for f in pathlib.Path("static").glob("*"): shutil.copy(f, site / f.name)
     if BASE:
         for f in site.rglob("*.html"):
             f.write_text(re.sub(r'(href|src)="/(?!/)', lambda m: f'{m.group(1)}="{BASE}/', f.read_text()))
