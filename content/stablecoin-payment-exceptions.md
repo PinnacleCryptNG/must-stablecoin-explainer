@@ -2,8 +2,8 @@
 title: "When a Stablecoin Payment Goes Wrong: What Actually Happens"
 slug: stablecoin-payment-exceptions
 description: "A plain-English guide for merchants and freelancers to wrong-network sends, stuck transactions, freezes, refunds and finality when paid in USDC or USDT."
-status: review
-version: 0.2
+status: approved
+version: 0.9
 author: AbdulMalik Yusuf (Pinnacle)
 ai_assisted: true
 last_verified: 2026-10-24
